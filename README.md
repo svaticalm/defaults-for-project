@@ -4,7 +4,10 @@
 Создаёт файл ```icons.js``` в папке ```/assets```, который нужен для вывода всех иконок в документации. 
 
 ## Установка
-```svgo.config.js```, ```SvgIcon.vue``` и ```Docs.vue``` закинуть в папку проекта
+```svgo.config.js``` в корневую папку, 
+```SvgIcon.vue``` в компоненты,
+```Views/Docs.vue``` в Views, это страница с набором иконок.
+
 
 ## Пакеты, которые нужно установить
 ```
@@ -14,19 +17,19 @@ npm install svgo svg-spreact-cli
 ## Скрипт для package.json
 ```/for-sprite``` - для иконок будушего спрайта. Готовый спрайт выгружается в папку ```/img/sprite.svg```
 
-```
+```jsx
 "sprite": "svgo -f ./src/assets/img/for-sprite -o ./src/assets/img/for-sprite && svg-spreact ./src/assets/img/for-sprite --optimize false --tidy true > ./src/assets/img/sprite.svg"
 ```
 
 ## Запуск скрипта
-``` 
+```
 npm run sprite
 ```
 
 ## Пример использования
 В параметр ```:name``` передаём название иконки.
 Параметры ```:width``` и ```:height``` отвечают за ширину и высоту.
-```
+```vue
 <svg-icon :name="'marker'"
   :width="16"
   :height="16" 
