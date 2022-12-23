@@ -9,7 +9,7 @@
 ## Установка
 ```svgo.config.js``` в корневую папку,
 
-```SvgIcon.vue``` в компоненты,
+```Components/SvgIcon.vue``` в компоненты,
 
 ```Docs.vue``` в Views, это страница с набором иконок.
 
