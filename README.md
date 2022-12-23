@@ -3,6 +3,7 @@
 
 # Основные компоненты
 Основные компоненты лежат в папке ```/Components```
+[Инпут](https://github.com/svaticalm/defaults-for-project/blob/main/README.md#%D0%B8%D0%BD%D0%BF%D1%83%D1%82)
 
 ## Инпут
 ```vue
