@@ -229,8 +229,8 @@ npm run sprite
   class="svg-icon"></svg-icon>
 ```
 # Inputmask
-В проектах используем преимущественно плагин inputmask для инпутов, чтобы навешивать маски для телефонов, дат и т.д.
-
+В проектах используем преимущественно плагин [inputmask](https://github.com/RobinHerbots/Inputmask) для инпутов, чтобы навешивать маски для телефонов, дат и т.д.
+## Установка
 Ставим пакет
 ```
 npm install inputmask
@@ -247,3 +247,9 @@ window.app = createApp(App)
     .use(VueInputMask) 
     .mount('#app');
  ```
+## Пример использования
+```
+<input-styled
+    :mask="{mask:'+7(999)999-99-99',showMaskOnHover: false}">
+</input-styled>
+```
