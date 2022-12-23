@@ -149,7 +149,7 @@ btnType имеет три значения
 </tooltip>
 ```
 ## Popup
-Объект такого типа, хранится в popups.js
+Объекты модалок хранятся в ```store/popups.js```
 ```vue
 teamCategoryModal: {
   name: 'teamCategoryModal',
