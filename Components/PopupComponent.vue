@@ -9,11 +9,12 @@
                    :class="[addClass]"
                    :style="{top: (top - 0) +'px', width: width+'px'}">
                   <div class="popup__wrap" v-clickoutside="close">
-                      <div class="popup__close" @click="close" v-if="isBtnClose">
-                          <svg-icon :name="'close'" :width="32" :height="32"></svg-icon>
+                      <div class="popup__close" @click="close" @keydown="close" v-if="isBtnClose">
                       </div>
 
                       <slot></slot>
+
+                      <footer-block></footer-block>
                   </div>
               </div>
             </div>
@@ -22,10 +23,10 @@
 </template>
 
 <script>
-import SvgIcon from '@/components/SvgIcon.vue';
+import FooterBlock from '@/components/FooterBlock.vue';
 
 export default {
-    name: 'Popup',
+    name: 'PopupWindow',
     props: {
         width: {
             default() {
@@ -70,7 +71,7 @@ export default {
         },
     },
     components: {
-        SvgIcon,
+        FooterBlock,
     },
     watch: {
         show() {
@@ -78,7 +79,6 @@ export default {
                 if (this.isSetTop) {
                     this.updateViewportSize();
                 }
-                document.getElementsByTagName('body')[0].classList.add('noscroll');
             }
         },
         isResize(newV, oldQV) {
@@ -197,16 +197,20 @@ export default {
         overflow-y: scroll
 
 .popup
-    width: 488px
+    width: 100vw
     box-shadow: 0 10px 25px rgba(0,0,0,0.5)
     height: auto
     margin: 0 auto
     margin-bottom: 32px
+    margin-top: 32px
     background: #fff
-    color: #545454
+    color: $black
     position: relative
     text-shadow: none
-    border-radius: 5px
+    border-radius: 0
+    +for-size(992)
+        overflow: hidden
+        border-radius: 12px
     &__footer
         display: flex
         justify-content: flex-end
@@ -218,36 +222,146 @@ export default {
         right: 0
         padding: 0 16px
     &__close
-        position: absolute
-        top: 16px
-        right: 16px
+        position: fixed
+        top: 8px
+        right: 8px
         cursor: pointer
         transition: $transition
         z-index: 1
+        background-color: $gray-light
+        border-radius: 32px
         color: $gray50
-        &:hover
-            color: $gray
+        width: 32px
+        height: 32px
+        display: flex
+        align-items: center
+        justify-content: center
         & + *
             margin-top: 0 !important
+        &:after
+            content: ''
+            width: 24px
+            height: 24px
+            background-image: url(../assets/img/for-sprite/close.svg)
+            background-size: contain
+            display: block
+            background-repeat: no-repeat
+        +for-size(992)
+            position: absolute
+            top: 16px
+            right: 16px
+            width: 40px
+            height: 40px
+            transition: all .15s ease
+            &:after
+                width: 32px
+                height: 32px
+            &:hover
+                background-color: $gray-light !important
     &__content
         display: flex
         flex-direction: column
         align-items: center
     &__wrap
         position: relative
-        padding: 48px 32px 48px
+        padding: 0
+        .footer
+            margin-top: 120px
+    &__text
+        padding: 24px 12px 0
+        +for-size(992)
+            padding: 32px 64px 0
+        h2
+            font-weight: 600
+            font-size: 16px
+            line-height: 19px
+            margin: 0 0 12px
+            +for-size(992)
+                font-size: 40px
+                line-height: 48px
+                margin: 0 0 32px
+        p
+            font-size: 14px
+            line-height: 18px
+            +for-size(992)
+                font-size: 20px
+                line-height: 24px
+                color: $gray2
+        .offer-detail__presents
+            padding: 0
+            margin-top: 24px
+            +for-size(992)
+                margin-top: 40px
+                margin-bottom: 40px
+            li
+                color: $red
+                .svg-icon
+                    color: $red
+        .btn
+            width: 100%
+            height: 48px
+            border-radius: 8px
+            +for-size(992)
+                display: inline-flex
+                height: 64px
+                font-size: 16px
+                line-height: 24px
+                border-radius: 12px
+                padding: 0 32px
     &__header
-        padding: 20px 32px
-        margin-bottom: 0
-        background: #282828
-        color: #fff
-        border-radius: 4px 4px 0 0
+        height: 220px
+        width: 100%
+        background-size: contain
+        background-repeat: no-repeat
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        +for-size(992)
+            height: 280px
+        h2
+            font-size: 24px
+            line-height: 30px
+            font-weight: 700
+            color: #fff
+            +for-size(992)
+                font-size: 32px
+                line-height: 40px
+        &.--garantee
+            background-image: url(../assets/img/garanteeModal.webp)
+            +for-size(992)
+                background-image: url(../assets/img/garanteeModal-desktop.webp)
+        &.--how-works
+            background-image: url(../assets/img/howItWorksModal.webp)
+            +for-size(992)
+                background-image: url(../assets/img/howItWorksModal-desktop.webp)
+        &.--contractor-modal
+            height: auto
+            padding: 65px 0
+            background: radial-gradient(41.77% 69.3% at 50% 52.97%, #292723 0%, rgba(41, 39, 35, 0) 100%), #0C0C15
+            +for-size(992)
+                padding: 84px 0
+            .svg-icon
+                margin-bottom: 12px
+                color: #fff
+                opacity: 0.8
+                +for-size(992)
+                    margin-bottom: 16px
+        &.--attention-modal
+            padding: 55px 0
+            height: auto
+            background-color: $red
+            +for-size(992)
+                padding: 48px 0
     .popup-info
         text-align: center
         .info-text
             font-size: 14px
             line-height: 17px
-
+    .mobile-device &
+        width: 320px !important
+        margin: 0 !important
+        margin-bottom: 0 !important
 .noscroll:not(.scroll-mac-os) #app
     padding-right: 16px
 .popup-scroll-block
@@ -263,5 +377,4 @@ export default {
     bottom: 0
     left: 0
     background: rgba(0,0,0,0.93)
-
 </style>
