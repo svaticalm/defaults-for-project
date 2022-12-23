@@ -17,6 +17,7 @@
 + [Checkbox](https://github.com/svaticalm/defaults-for-project#checkbox)
 + [Селект](https://github.com/svaticalm/defaults-for-project#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82)
 + [Тултип](https://github.com/svaticalm/defaults-for-project#%D1%82%D1%83%D0%BB%D1%82%D0%B8%D0%BF)
++ [Хинт](https://github.com/svaticalm/defaults-for-project#%D1%85%D0%B8%D0%BD%D1%82)
 + [Popup](https://github.com/svaticalm/defaults-for-project#popup)
 
 ## Инпут
