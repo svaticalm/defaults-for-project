@@ -248,7 +248,7 @@ window.app = createApp(App)
     .mount('#app');
  ```
 ## Пример использования
-```
+```vue
 <input-styled
     :mask="{mask:'+7(999)999-99-99',showMaskOnHover: false}">
 </input-styled>
