@@ -1,8 +1,8 @@
 # Быстрый доступ
-+ [Стили](https://github.com/svaticalm/defaults-for-project#styles)
-+ [Основные компонеты](https://github.com/svaticalm/defaults-for-project#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B)
-+ [SvgSprite](https://github.com/svaticalm/defaults-for-project#svg-sprite)
-+ [Inputmask](https://github.com/svaticalm/defaults-for-project#inputmask)
++ [Стили](https://github.com/svaticalm/defaults-for-vue#styles)
++ [Основные компонеты](https://github.com/svaticalm/defaults-for-vue#%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B)
++ [SvgSprite](https://github.com/svaticalm/defaults-for-vue#svg-sprite)
++ [Inputmask](https://github.com/svaticalm/defaults-for-vue#inputmask)
 
 # Styles
 Основные стили для проекта лежат в папке ```/sass```, переносим её в assets
@@ -10,16 +10,16 @@
 # Основные компоненты
 Основные компоненты лежат в папке ```/Components```
 
-+ [Инпут](https://github.com/svaticalm/defaults-for-project/blob/main/README.md#%D0%B8%D0%BD%D0%BF%D1%83%D1%82)
-+ [Инпут ФИО](https://github.com/svaticalm/defaults-for-project#%D0%B8%D0%BD%D0%BF%D1%83%D1%82-%D1%84%D0%B8%D0%BE)
-+ [Текстареа](https://github.com/svaticalm/defaults-for-project#%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B0)
-+ [Кнопка Сабмит](https://github.com/svaticalm/defaults-for-project#%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0-%D1%81%D0%B0%D0%B1%D0%BC%D0%B8%D1%82)
-+ [Radio](https://github.com/svaticalm/defaults-for-project#radio)
-+ [Checkbox](https://github.com/svaticalm/defaults-for-project#checkbox)
-+ [Селект](https://github.com/svaticalm/defaults-for-project#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82)
-+ [Тултип](https://github.com/svaticalm/defaults-for-project#%D1%82%D1%83%D0%BB%D1%82%D0%B8%D0%BF)
-+ [Хинт](https://github.com/svaticalm/defaults-for-project#%D1%85%D0%B8%D0%BD%D1%82)
-+ [Popup](https://github.com/svaticalm/defaults-for-project#popup)
++ [Инпут](https://github.com/svaticalm/defaults-for-vue/blob/main/README.md#%D0%B8%D0%BD%D0%BF%D1%83%D1%82)
++ [Инпут ФИО](https://github.com/svaticalm/defaults-for-vue#%D0%B8%D0%BD%D0%BF%D1%83%D1%82-%D1%84%D0%B8%D0%BE)
++ [Текстареа](https://github.com/svaticalm/defaults-for-vue#%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B0)
++ [Кнопка Сабмит](https://github.com/svaticalm/defaults-for-vue#%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B0-%D1%81%D0%B0%D0%B1%D0%BC%D0%B8%D1%82)
++ [Radio](https://github.com/svaticalm/defaults-for-vue#radio)
++ [Checkbox](https://github.com/svaticalm/defaults-for-vue#checkbox)
++ [Селект](https://github.com/svaticalm/defaults-for-vue#%D1%81%D0%B5%D0%BB%D0%B5%D0%BA%D1%82)
++ [Тултип](https://github.com/svaticalm/defaults-for-vue#%D1%82%D1%83%D0%BB%D1%82%D0%B8%D0%BF)
++ [Хинт](https://github.com/svaticalm/defaults-for-vue#%D1%85%D0%B8%D0%BD%D1%82)
++ [Popup](https://github.com/svaticalm/defaults-for-vue#popup)
 
 ## Инпут
 ```vue
