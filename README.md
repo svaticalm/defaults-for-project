@@ -1,6 +1,167 @@
 # Styles
 Основные стили для проекта лежат в папке ```/sass```, переносим её в assets
 
+# Основные компоненты
+Основные компоненты лежат в папке ```/Components```
+
+## Инпут
+```vue
+<input-styled
+  name=""
+  :class="''"
+  :placeholderInput="'Плейсхолдер'"
+  @blur="блюр"
+  v-model="form.keyword.value"
+  @focus="фокус"
+  :is-error="передаём ошибку"
+  :errorText="текст ошибки">
+</input-styled>
+```
+## Инпут ФИО
+Используется объект fields
+```javascript
+fields: {
+  lastName: {
+      name: 'lastName',
+      value: '',
+      delimiter: ' ',
+      placeholder: 'Фамилия',
+  },
+  firstName: {
+      name: 'firstName',
+      value: '',
+      delimiter: ' ',
+      placeholder: 'Имя',
+  },
+  secondName: {
+      name: 'secondName',
+      value: '',
+      delimiter: '',
+      placeholder: 'Отчество',
+  },
+},
+```
+Функция setPersonInput
+```javascript
+setPersonInput(field) {
+  if (field.value !== undefined && field.name !== undefined) {
+      this.form.fio.fields[field.name].value = field.value;
+  }
+},
+```
+```vue
+<input-multi
+  @chunk="setPersonInput"
+  name="fio"
+  :disabled="false"
+  :auto-focus="true"
+  :is-error="form.fio.error"
+  :error-text="form.fio.errorText"
+  v-model="form.fio.value"
+  :fields="form.fio.fields"
+  @focus="form.fio.error = false"
+  :placeholderInput="'Фамилия Имя Отчество'"
+  :placeholder="'Фамилия Имя Отчество'">
+</input-multi>
+```
+## Текстареа
+```vue
+<textarea-field :class="''"
+  v-model="модел"
+  :is-error="ошибка"
+  :error-text="'текст ошибки'"
+  :auto-focus="true or false"
+  placeholder="Плейсхолдер"
+  :add-style="{minHeight: 100 + 'px'}">
+</textarea-field>
+```
+## Кнопка сабмит
+btnType имеет три значения
++ 'normal'
++ 'load'
++ 'ok'
+```vue
+<submit-btn @click="sendForm" class="btn mr24" :type="btnType">
+  <svg-icon :name="'check'" :width="16" :height="16" class="mr4"></svg-icon>
+  Подтвердить
+</submit-btn>
+```
+## Radio
+```vue
+<check-item v-model="valueModel"
+  @update:modelValue="updateValue(values[1])"
+  :inputId="`${inputId}1`"
+  :value="valueModel === values[1]"
+  :type="'radio'"
+  :disabled="isDisabled"
+  :name="name"
+  :class="{'mt12': $slots.labelFirst}">
+  <slot name="labelSecond">Лейбл</slot>
+</check-item>
+```
+## Checkbox
+```vue
+<check-item v-model="модел" 
+  :is-error="ошибка"
+  @update:modelValue="функция обновления значения"
+  :inputId="'isHideBankingDetails'" 
+  :name="'isHideBankingDetails'">
+</check-item>
+```
+## Селект
+```vue
+<input-select
+  @open="эммет открытия"
+  :disabled="false"
+  @change="эммет изменения"
+  :isError="ошибка"
+  v-model="модел"
+  :options="опции"
+  :classInput="''"
+  :placeholder="'Плейсхолдер'"
+  :list-style="{'max-height': 'none'}">
+</input-select>
+```
+## Тултип
+:direction имеет несколько значений
++ 'bottom-center-direction'
++ 'bottom-left-direction'
++ 'bottom-right-direction'
++ 'top-right-direction'
++ 'top-left-direction'
++ 'top-center-direction'
+
+Слот TooltipBtn - кнопка вызова тултипа
+
+Слот TooltipContent - контент тултипа
+```vue
+<tooltip
+    :direction="'bottom-center-direction'"
+    :add-style="{width: '264px'}"
+    :add-class="'text-tooltip'"
+    :is-btn-close="false">
+    <template v-slot:tooltipBtn>
+        <svg-icon :name="'info2'" :width="16" :height="16" class="text-color-link"></svg-icon>
+    </template>
+    <template v-slot:tooltipContent>
+        <div v-html="item.info"></div>
+    </template>
+</tooltip>
+```
+## Popup
+Объект такого типа, хранится в popups.js
+```vue
+teamCategoryModal: {
+  name: 'teamCategoryModal',
+  show: false,
+}
+```
+```vue
+<popup :show="popups.teamCategoryModal.show" :name="popups.teamCategoryModal.name" :width="640" >
+    Наполнение
+</popup>
+```
+
 # Svg-sprite
 Спрайт убирает цвет иконок, каждую иконку ставит в тэг symbol, даёт id в соответствии с названием файла иконки.
 
