@@ -5,12 +5,12 @@
 
 # Основные компоненты
 Основные компоненты лежат в папке ```/components```
-Для создания объекта любого инпута (textarea, checkbox и т.д.), вспользуйтесь функцией createInputField из ```/utils/index.ts``
+Для создания объекта любого инпута (textarea, checkbox и т.д.), вспользуйтесь функцией createInputField из ```/utils/index.ts```
 
 + [Инпут](https://github.com/svaticalm/defaults-for-vue/blob/main/README.md#%D0%B8%D0%BD%D0%BF%D1%83%D1%82)
 + [Текстареа](https://github.com/svaticalm/defaults-for-vue#%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0%D1%80%D0%B5%D0%B0)
 + [Кнопка](https://github.com/svaticalm/defaults-for-vue#button)
-+ [Radio/Checkbox](https://github.com/svaticalm/defaults-for-vue#radio-checkbox)
++ [Radio/Checkbox](https://github.com/svaticalm/defaults-for-vue#radio---checkbox)
 + [Тултип](https://github.com/svaticalm/defaults-for-vue#%D1%82%D1%83%D0%BB%D1%82%D0%B8%D0%BF)
 + [Popup](https://github.com/svaticalm/defaults-for-vue#popup)
 
